@@ -76,10 +76,17 @@ The page auto-updates as you edit files in the `src/app` directory.
 portfolio/
 ├── src/
 │   ├── app/              # Next.js App Router pages
-│   │   ├── layout.tsx    # Root layout
-│   │   ├── page.tsx      # Home page
+│   │   ├── layout.tsx    # Root layout with font configuration
+│   │   ├── page.tsx      # Component showcase page
 │   │   └── globals.css   # Global styles & Tailwind config
 │   ├── components/       # React components
+│   │   └── ui/          # Reusable UI component library
+│   │       ├── Button.tsx      # Button component with variants
+│   │       ├── Card.tsx        # Card component with subcomponents
+│   │       ├── Container.tsx   # Layout container component
+│   │       ├── Section.tsx     # Section wrapper component
+│   │       ├── Badge.tsx       # Badge/tag component
+│   │       └── index.ts        # Barrel export file
 │   ├── lib/             # Utility functions
 │   └── types/           # TypeScript type definitions
 ├── public/              # Static assets
@@ -89,21 +96,170 @@ portfolio/
 └── tsconfig.json        # TypeScript configuration
 ```
 
-## 🎨 Customization
+## 🎨 Design System
 
 ### Theme Configuration
 
 The custom theme is defined in `src/app/globals.css` using CSS variables:
 
 - **Colors:** Primary, secondary, accent, muted, and semantic colors
-- **Typography:** Custom font families (Geist Sans & Geist Mono)
-- **Spacing:** Consistent section spacing
-- **Animations:** Duration variables for smooth transitions
+- **Typography:** Inter for body text, Space Grotesk for headings
+- **Spacing:** Consistent section spacing with responsive adjustments
+- **Animations:** Duration variables for smooth transitions (fast: 150ms, normal: 300ms, slow: 500ms)
 - **Dark Mode:** Automatic dark mode support based on system preferences
+
+### UI Component Library
+
+A comprehensive set of reusable components built with TypeScript and Tailwind CSS:
+
+#### Button
+
+Flexible button component with multiple variants and sizes.
+
+```tsx
+import { Button } from "@/components/ui";
+
+// Variants: primary, secondary, ghost
+// Sizes: sm, md, lg
+<Button variant="primary" size="md">Click me</Button>
+<Button variant="secondary" size="lg">Secondary</Button>
+<Button variant="ghost" disabled>Disabled</Button>
+```
+
+**Props:**
+
+- `variant?: "primary" | "secondary" | "ghost"` - Visual style (default: "primary")
+- `size?: "sm" | "md" | "lg"` - Button size (default: "md")
+- All standard HTML button attributes
+
+**Features:**
+
+- Accessible with focus ring and keyboard navigation
+- Active state with scale animation
+- Disabled state support
+- Smooth transitions using theme duration variables
+
+---
+
+#### Card
+
+Versatile card component with optional hover effects and subcomponents.
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui";
+
+<Card hover={true}>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card description text</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Main content goes here</p>
+  </CardContent>
+  <CardFooter>
+    <Button>Action</Button>
+  </CardFooter>
+</Card>;
+```
+
+**Props:**
+
+- `hover?: boolean` - Enable hover effects (default: true)
+- All standard HTML div attributes
+
+**Features:**
+
+- Hover lift effect with shadow
+- Border highlight on hover
+- Compositional design with subcomponents
+- Works perfectly in both light and dark themes
+
+---
+
+#### Container & Section
+
+Layout components for consistent spacing and max-width constraints.
+
+```tsx
+import { Container, Section } from "@/components/ui";
+
+// Container with max-width
+<Container size="lg">
+  {/* Content */}
+</Container>
+
+// Section with vertical spacing
+<Section spacing="lg">
+  <Container>
+    {/* Page section content */}
+  </Container>
+</Section>
+```
+
+**Container Props:**
+
+- `size?: "sm" | "md" | "lg" | "xl" | "full"` - Max-width (default: "lg")
+  - sm: 768px
+  - md: 1024px
+  - lg: 1280px
+  - xl: 1536px
+  - full: 100%
+
+**Section Props:**
+
+- `spacing?: "sm" | "md" | "lg" | "none"` - Vertical padding (default: "lg")
+
+---
+
+#### Badge
+
+Compact component for labels, tags, and status indicators.
+
+```tsx
+import { Badge } from "@/components/ui";
+
+// Variants: default, primary, secondary, success, warning, error
+// Sizes: sm, md
+<Badge variant="primary">Featured</Badge>
+<Badge variant="success" size="sm">New</Badge>
+<Badge variant="error">Error</Badge>
+```
+
+**Props:**
+
+- `variant?: "default" | "primary" | "secondary" | "success" | "warning" | "error"` - Visual style (default: "default")
+- `size?: "sm" | "md"` - Badge size (default: "md")
+
+**Features:**
+
+- Multiple color variants for different contexts
+- Semantic colors (success, warning, error)
+- Consistent with theme color palette
+- Works in light and dark modes
+
+---
 
 ### Tailwind CSS
 
 This project uses Tailwind CSS v4 with the new `@theme` directive. Customize the theme by modifying the CSS variables in `src/app/globals.css`.
+
+### Typography Scale
+
+Responsive typography using CSS `clamp()` for fluid sizing:
+
+- **H1:** 2.5rem - 4rem (40px - 64px)
+- **H2:** 2rem - 3rem (32px - 48px)
+- **H3:** 1.5rem - 2.25rem (24px - 36px)
+- **Body:** 1rem with 1.7 line-height
+
+All headings use Space Grotesk (display font), body text uses Inter (sans-serif).
 
 ## 🚢 Deployment
 
