@@ -1,6 +1,7 @@
 import { Container, Section } from "@/components/ui";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { Experience } from "@/components/sections/Experience";
 
 export default function Home() {
   return (
@@ -11,51 +12,8 @@ export default function Home() {
       {/* About Section with Animated Stats */}
       <About />
 
-      {/* Experience Section */}
-      <Section id="experience" spacing="lg">
-        <Container size="lg">
-          <h2 className="mb-12">Experience</h2>
-          <div className="space-y-8">
-            {[
-              {
-                title: "Senior Frontend Developer",
-                company: "Tech Company",
-                period: "2022 - Present",
-                description:
-                  "Leading frontend development for enterprise applications, mentoring junior developers, and implementing best practices for code quality and performance.",
-              },
-              {
-                title: "Full Stack Developer",
-                company: "Startup Inc.",
-                period: "2020 - 2022",
-                description:
-                  "Built and maintained multiple client projects using React, Node.js, and PostgreSQL. Improved application performance by 40%.",
-              },
-              {
-                title: "Frontend Developer",
-                company: "Digital Agency",
-                period: "2018 - 2020",
-                description:
-                  "Developed responsive websites and web applications for various clients. Collaborated with designers and backend developers.",
-              },
-            ].map((job, index) => (
-              <div
-                key={index}
-                className="border-primary border-l-2 pb-8 pl-6 last:pb-0"
-              >
-                <div className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <h3 className="text-xl font-semibold">{job.title}</h3>
-                  <span className="text-muted-foreground text-sm">
-                    {job.period}
-                  </span>
-                </div>
-                <p className="text-primary mb-2 font-medium">{job.company}</p>
-                <p className="text-muted-foreground">{job.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
+      {/* Experience Timeline */}
+      <Experience />
 
       {/* Testimonials Section */}
       <Section id="testimonials" spacing="lg" className="bg-muted/30">
