@@ -2,6 +2,7 @@ import { Container, Section } from "@/components/ui";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
+import { Skills } from "@/components/sections/Skills";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
 
       {/* Experience Timeline */}
       <Experience />
+
+      {/* Skills & Technologies */}
+      <Skills />
 
       {/* Testimonials Section */}
       <Section id="testimonials" spacing="lg" className="bg-muted/30">
