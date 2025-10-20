@@ -1,297 +1,211 @@
-"use client";
-
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-  Container,
-  Section,
-  Badge,
-} from "@/components/ui";
+import { Container, Section } from "@/components/ui";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Hero Section */}
-      <Section spacing="lg">
+      <Section spacing="lg" className="flex min-h-[80vh] items-center">
         <Container size="lg">
-          <div className="text-center">
-            <Badge variant="primary" className="mb-4">
-              Design System v1.0
-            </Badge>
-            <h1>Portfolio Design System</h1>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
-              A comprehensive component library built with Next.js 15,
-              TypeScript, Tailwind CSS, and Framer Motion.
+          <div className="max-w-3xl">
+            <h1 className="mb-6">
+              Hi, I&apos;m Your Name{" "}
+              <span className="wave inline-block">👋</span>
+            </h1>
+            <p className="text-muted-foreground mb-8 text-xl">
+              A passionate full-stack developer crafting beautiful, functional,
+              and user-friendly digital experiences.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button variant="primary" size="lg">
-                Get Started
-              </Button>
-              <Button variant="secondary" size="lg">
-                View Components
-              </Button>
-              <Button variant="ghost" size="lg">
-                Learn More
-              </Button>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-all"
+              >
+                Get in Touch
+              </a>
+              <a
+                href="#experience"
+                className="border-border bg-background hover:bg-muted inline-flex items-center justify-center rounded-lg border px-6 py-3 font-medium transition-all"
+              >
+                View Work
+              </a>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* Typography Section */}
-      <Section spacing="lg" className="bg-muted/30">
+      {/* About Section */}
+      <Section id="about" spacing="lg" className="bg-muted/30">
         <Container size="lg">
-          <h2 className="mb-8">Typography Scale</h2>
-          <div className="space-y-6">
+          <h2 className="mb-8">About Me</h2>
+          <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <h1>Heading 1 - Space Grotesk</h1>
-              <p className="text-muted-foreground">
-                Font size: clamp(2.5rem, 5vw, 4rem)
+              <p className="text-muted-foreground mb-4 text-lg">
+                I&apos;m a developer with a passion for creating elegant
+                solutions to complex problems. With expertise in modern web
+                technologies, I specialize in building responsive, accessible,
+                and performant applications.
+              </p>
+              <p className="text-muted-foreground text-lg">
+                When I&apos;m not coding, you&apos;ll find me exploring new
+                technologies, contributing to open-source projects, or sharing
+                knowledge with the developer community.
               </p>
             </div>
-            <div>
-              <h2>Heading 2 - Space Grotesk</h2>
-              <p className="text-muted-foreground">
-                Font size: clamp(2rem, 4vw, 3rem)
-              </p>
-            </div>
-            <div>
-              <h3>Heading 3 - Space Grotesk</h3>
-              <p className="text-muted-foreground">
-                Font size: clamp(1.5rem, 3vw, 2.25rem)
-              </p>
-            </div>
-            <div>
-              <p className="text-lg">
-                Body text uses Inter font family with a comfortable line-height
-                of 1.7 for optimal readability. This ensures your content is
-                easy to read across all devices.
-              </p>
+            <div className="space-y-4">
+              <h3 className="mb-4 text-xl font-semibold">
+                Skills & Technologies
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "React",
+                  "Next.js",
+                  "TypeScript",
+                  "Tailwind CSS",
+                  "Node.js",
+                  "PostgreSQL",
+                  "AWS",
+                  "Docker",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="border-primary/20 bg-primary/10 text-primary inline-flex items-center rounded-md border px-3 py-1 text-sm font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* Buttons Section */}
-      <Section spacing="lg">
+      {/* Experience Section */}
+      <Section id="experience" spacing="lg">
         <Container size="lg">
-          <h2 className="mb-8">Button Variants & Sizes</h2>
+          <h2 className="mb-12">Experience</h2>
           <div className="space-y-8">
-            <div>
-              <h3 className="mb-4">Primary Buttons</h3>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="primary" size="sm">
-                  Small
-                </Button>
-                <Button variant="primary" size="md">
-                  Medium
-                </Button>
-                <Button variant="primary" size="lg">
-                  Large
-                </Button>
-                <Button variant="primary" size="md" disabled>
-                  Disabled
-                </Button>
+            {[
+              {
+                title: "Senior Frontend Developer",
+                company: "Tech Company",
+                period: "2022 - Present",
+                description:
+                  "Leading frontend development for enterprise applications, mentoring junior developers, and implementing best practices for code quality and performance.",
+              },
+              {
+                title: "Full Stack Developer",
+                company: "Startup Inc.",
+                period: "2020 - 2022",
+                description:
+                  "Built and maintained multiple client projects using React, Node.js, and PostgreSQL. Improved application performance by 40%.",
+              },
+              {
+                title: "Frontend Developer",
+                company: "Digital Agency",
+                period: "2018 - 2020",
+                description:
+                  "Developed responsive websites and web applications for various clients. Collaborated with designers and backend developers.",
+              },
+            ].map((job, index) => (
+              <div
+                key={index}
+                className="border-primary border-l-2 pb-8 pl-6 last:pb-0"
+              >
+                <div className="mb-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="text-xl font-semibold">{job.title}</h3>
+                  <span className="text-muted-foreground text-sm">
+                    {job.period}
+                  </span>
+                </div>
+                <p className="text-primary mb-2 font-medium">{job.company}</p>
+                <p className="text-muted-foreground">{job.description}</p>
               </div>
-            </div>
-            <div>
-              <h3 className="mb-4">Secondary Buttons</h3>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="secondary" size="sm">
-                  Small
-                </Button>
-                <Button variant="secondary" size="md">
-                  Medium
-                </Button>
-                <Button variant="secondary" size="lg">
-                  Large
-                </Button>
-              </div>
-            </div>
-            <div>
-              <h3 className="mb-4">Ghost Buttons</h3>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="ghost" size="sm">
-                  Small
-                </Button>
-                <Button variant="ghost" size="md">
-                  Medium
-                </Button>
-                <Button variant="ghost" size="lg">
-                  Large
-                </Button>
-              </div>
-            </div>
+            ))}
           </div>
         </Container>
       </Section>
 
-      {/* Cards Section */}
-      <Section spacing="lg" className="bg-muted/30">
+      {/* Testimonials Section */}
+      <Section id="testimonials" spacing="lg" className="bg-muted/30">
         <Container size="lg">
-          <h2 className="mb-8">Card Components</h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <Badge variant="primary" size="sm" className="mb-2 w-fit">
-                  Featured
-                </Badge>
-                <CardTitle>Interactive Card</CardTitle>
-                <CardDescription>
-                  Cards with hover effects for enhanced interactivity
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  This card includes a smooth hover animation with lift effect
-                  and shadow. Perfect for project showcases and feature
-                  highlights.
+          <h2 className="mb-12">What People Say</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                quote:
+                  "Exceptional developer with great attention to detail. Delivered our project ahead of schedule.",
+                author: "Jane Doe",
+                role: "CEO, Tech Startup",
+              },
+              {
+                quote:
+                  "A true professional who brings creativity and technical expertise to every project.",
+                author: "John Smith",
+                role: "Product Manager",
+              },
+              {
+                quote:
+                  "Outstanding work ethic and communication skills. Would highly recommend!",
+                author: "Sarah Johnson",
+                role: "Design Lead",
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="border-border bg-card rounded-xl border p-6 transition-all hover:shadow-lg"
+              >
+                <p className="text-muted-foreground mb-4 italic">
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="ghost" size="sm">
-                  Learn More →
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Badge variant="success" size="sm" className="mb-2 w-fit">
-                  New
-                </Badge>
-                <CardTitle>Design System</CardTitle>
-                <CardDescription>
-                  Built with TypeScript and Tailwind CSS
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  A comprehensive set of reusable components following best
-                  practices and accessibility standards.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="primary" size="sm">
-                  Explore
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card hover={false}>
-              <CardHeader>
-                <Badge variant="secondary" size="sm" className="mb-2 w-fit">
-                  Info
-                </Badge>
-                <CardTitle>Static Card</CardTitle>
-                <CardDescription>
-                  Cards can be static without hover effects
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  This card has hover disabled, making it perfect for displaying
-                  static information or content that doesn&apos;t require
-                  interaction.
-                </p>
-              </CardContent>
-            </Card>
+                <div className="border-border border-t pt-4">
+                  <p className="font-semibold">{testimonial.author}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </Section>
 
-      {/* Badges Section */}
-      <Section spacing="lg">
+      {/* Contact Section */}
+      <Section id="contact" spacing="lg">
         <Container size="lg">
-          <h2 className="mb-8">Badge Variants</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="mb-4">Medium Size</h3>
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="default">Default</Badge>
-                <Badge variant="primary">Primary</Badge>
-                <Badge variant="secondary">Secondary</Badge>
-                <Badge variant="success">Success</Badge>
-                <Badge variant="warning">Warning</Badge>
-                <Badge variant="error">Error</Badge>
-              </div>
-            </div>
-            <div>
-              <h3 className="mb-4">Small Size</h3>
-              <div className="flex flex-wrap gap-3">
-                <Badge variant="default" size="sm">
-                  Default
-                </Badge>
-                <Badge variant="primary" size="sm">
-                  Primary
-                </Badge>
-                <Badge variant="secondary" size="sm">
-                  Secondary
-                </Badge>
-                <Badge variant="success" size="sm">
-                  Success
-                </Badge>
-                <Badge variant="warning" size="sm">
-                  Warning
-                </Badge>
-                <Badge variant="error" size="sm">
-                  Error
-                </Badge>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Container Sizes Section */}
-      <Section spacing="lg" className="bg-muted/30">
-        <div className="space-y-8">
-          <Container size="sm">
-            <div className="bg-primary/10 border-primary/20 rounded-lg border p-6">
-              <h3 className="mb-2">Small Container</h3>
-              <p className="text-muted-foreground">Max-width: 768px</p>
-            </div>
-          </Container>
-          <Container size="md">
-            <div className="bg-secondary/10 border-secondary/20 rounded-lg border p-6">
-              <h3 className="mb-2">Medium Container</h3>
-              <p className="text-muted-foreground">Max-width: 1024px</p>
-            </div>
-          </Container>
-          <Container size="lg">
-            <div className="bg-accent/10 border-accent/20 rounded-lg border p-6">
-              <h3 className="mb-2">Large Container</h3>
-              <p className="text-muted-foreground">Max-width: 1280px</p>
-            </div>
-          </Container>
-        </div>
-      </Section>
-
-      {/* Footer */}
-      <Section spacing="md">
-        <Container size="lg">
-          <div className="border-border border-t py-8 text-center">
-            <p className="text-muted-foreground">
-              Built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="mb-6">Get In Touch</h2>
+            <p className="text-muted-foreground mb-8 text-xl">
+              Have a project in mind or want to collaborate? I&apos;d love to
+              hear from you!
             </p>
-            <div className="mt-4 flex justify-center gap-3">
-              <Badge variant="primary" size="sm">
-                React 19
-              </Badge>
-              <Badge variant="primary" size="sm">
-                TypeScript
-              </Badge>
-              <Badge variant="primary" size="sm">
-                Tailwind CSS
-              </Badge>
-              <Badge variant="primary" size="sm">
-                Framer Motion
-              </Badge>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <a
+                href="mailto:your.email@example.com"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-all"
+              >
+                <svg
+                  className="mr-2 h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                Send Email
+              </a>
+              <a
+                href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-border bg-background hover:bg-muted inline-flex items-center justify-center rounded-lg border px-6 py-3 font-medium transition-all"
+              >
+                Connect on LinkedIn
+              </a>
             </div>
           </div>
         </Container>
