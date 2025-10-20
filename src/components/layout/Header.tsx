@@ -87,7 +87,7 @@ export function Header() {
             onClick={handleLogoClick}
             className="hover:text-primary text-xl font-bold transition-colors md:text-2xl"
           >
-            Your Name
+            Robert Robinson
           </a>
 
           {/* Desktop Navigation */}

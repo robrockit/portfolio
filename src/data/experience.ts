@@ -89,25 +89,25 @@ export const experiences: Experience[] = [
     description:
       "Built and scaled core e-commerce platform features, focusing on payment systems, API integrations, and performance optimization.",
     highlights: [
-      "Architected and implemented RESTful API gateway serving 50M+ requests/day",
-      "Optimized database queries reducing page load times by 70%",
-      "Led integration with multiple shipping carrier APIs (USPS, UPS, FedEx)",
-      "Mentored 5+ junior developers through code reviews and pair programming",
-      "Contributed to migration from .NET Framework to modern cloud-native stack",
+      "Transistioned legacy desktop application to web-based platform using javascript and .NET technologies",
+      "Developed a shared components library to standardize UI/UX across multiple teams, reducing development time for new features by 25%",
+      "Led integration with multiple ecommerce platforms (eBay, Amazon), increasing sales channels and revenue by 15%",
+      "Mentored 5+ junior offshore developers through code reviews and pair programming",
+      "Monitored and optimized application performance using Splunk and Sumo Logic, maintining 99.9% uptime and accelerating issue resolution times",
     ],
   },
   {
     id: "teaching",
-    company: "Various Educational Institutions",
-    role: "Computer Science Instructor",
+    company: "Victor Valley Union High School District",
+    role: "Biology Teacher and Dept. Chair",
     period: "2003 - 2009",
-    location: "Southern California",
+    location: "Victorville, CA",
     description:
-      "Taught programming fundamentals, web development, and database systems to college students. Developed curriculum and hands-on projects that prepared students for industry careers.",
+      "Taught biology courses to high school students, developed curriculum, and led department initiatives to improve educational outcomes.",
     highlights: [
-      "Designed and delivered courses in Java, C++, Web Development, and Database Design",
-      "Maintained 4.5+ average instructor rating across 1000+ students",
-      "Created practical lab exercises bridging academic concepts with real-world applications",
+      "Developed and presented engaging multimedia lectures that inspired students to dive deeper into their learning",
+      "Championed the integration of classroom technology, introducing digital resources and early learning management tools to enhance instruction and student engagement",
+      "Designed and facilitated professional development workshops for fellow teachers on integrating technology and improving instructional efficiency",
       "Developed passion for mentorship and technical communication",
     ],
     expanded: false, // Start collapsed for length management
