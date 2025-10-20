@@ -1,0 +1,20 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#f1f5f9"/>
+
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#grad)"/>
+
+  <!-- Person icon -->
+  <circle cx="200" cy="160" r="60" fill="#64748b" opacity="0.3"/>
+  <path d="M200 230 C140 230, 100 270, 100 330 L100 400 L300 400 L300 330 C300 270, 260 230, 200 230 Z" fill="#64748b" opacity="0.3"/>
+
+  <!-- Text -->
+  <text x="200" y="390" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="16" opacity="0.5">Professional Photo</text>
+</svg>
