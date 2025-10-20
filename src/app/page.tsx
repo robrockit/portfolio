@@ -1,38 +1,12 @@
 import { Container, Section } from "@/components/ui";
+import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <Section spacing="lg" className="flex min-h-[80vh] items-center">
-        <Container size="lg">
-          <div className="max-w-3xl">
-            <h1 className="mb-6">
-              Hi, I&apos;m Your Name{" "}
-              <span className="wave inline-block">👋</span>
-            </h1>
-            <p className="text-muted-foreground mb-8 text-xl">
-              A passionate full-stack developer crafting beautiful, functional,
-              and user-friendly digital experiences.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-all"
-              >
-                Get in Touch
-              </a>
-              <a
-                href="#experience"
-                className="border-border bg-background hover:bg-muted inline-flex items-center justify-center rounded-lg border px-6 py-3 font-medium transition-all"
-              >
-                View Work
-              </a>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <Hero />
 
       {/* About Section with Animated Stats */}
       <About />

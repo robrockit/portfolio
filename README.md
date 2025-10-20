@@ -110,7 +110,9 @@ The custom theme is defined in `src/app/globals.css` using CSS variables:
 
 ### UI Component Library
 
-A comprehensive set of reusable components built with TypeScript and Tailwind CSS:
+A comprehensive set of reusable components built with TypeScript and Tailwind CSS.
+
+📖 **[View Full Component Documentation](./src/components/ui/COMPONENTS.md)** - Detailed API reference, usage examples, and best practices for all components.
 
 #### Button
 
