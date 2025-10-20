@@ -1,5 +1,6 @@
 import { Container, Section } from "@/components/ui";
 import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
 
 export default function Home() {
   return (
@@ -7,51 +8,8 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* About Section */}
-      <Section id="about" spacing="lg" className="bg-muted/30">
-        <Container size="lg">
-          <h2 className="mb-8">About Me</h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div>
-              <p className="text-muted-foreground mb-4 text-lg">
-                I&apos;m a developer with a passion for creating elegant
-                solutions to complex problems. With expertise in modern web
-                technologies, I specialize in building responsive, accessible,
-                and performant applications.
-              </p>
-              <p className="text-muted-foreground text-lg">
-                When I&apos;m not coding, you&apos;ll find me exploring new
-                technologies, contributing to open-source projects, or sharing
-                knowledge with the developer community.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="mb-4 text-xl font-semibold">
-                Skills & Technologies
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "React",
-                  "Next.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Node.js",
-                  "PostgreSQL",
-                  "AWS",
-                  "Docker",
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="border-primary/20 bg-primary/10 text-primary inline-flex items-center rounded-md border px-3 py-1 text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      {/* About Section with Animated Stats */}
+      <About />
 
       {/* Experience Section */}
       <Section id="experience" spacing="lg">
