@@ -58,7 +58,7 @@ export function Hero() {
           <div className="space-y-6 text-center md:text-left">
             <motion.div variants={itemVariants} className="space-y-2">
               <h1 className="text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
-                Your Name
+                Robert Robinson
               </h1>
               <p className="text-primary text-2xl font-semibold sm:text-3xl">
                 Engineering Manager
@@ -135,8 +135,8 @@ export function Hero() {
               <div className="bg-primary/10 absolute -inset-4 rounded-full blur-3xl" />
               <div className="border-primary/20 from-muted to-muted/50 relative h-64 w-64 overflow-hidden rounded-full border-4 bg-gradient-to-br shadow-2xl sm:h-80 sm:w-80 lg:h-96 lg:w-96">
                 <Image
-                  src="/images/profile-placeholder.svg"
-                  alt="Professional headshot of Your Name, Engineering Manager"
+                  src="/images/profile.jpg"
+                  alt="Professional headshot of Robert Robinson, Engineering Manager"
                   fill
                   className="object-cover"
                   priority
