@@ -135,12 +135,13 @@ export function Hero() {
               <div className="bg-primary/10 absolute -inset-4 rounded-full blur-3xl" />
               <div className="border-primary/20 from-muted to-muted/50 relative h-64 w-64 overflow-hidden rounded-full border-4 bg-gradient-to-br shadow-2xl sm:h-80 sm:w-80 lg:h-96 lg:w-96">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile.JPG"
                   alt="Professional headshot of Robert Robinson, Engineering Manager"
                   fill
                   className="object-cover"
                   priority
                   sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
+                  quality={90}
                 />
               </div>
             </div>
