@@ -57,9 +57,28 @@
   --radius-xl: 1rem;
 }
 
+/* Dark mode colors - applied when .dark class is present OR system prefers dark */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #64748b;
+  --secondary-foreground: #ffffff;
+  --accent: #8b5cf6;
+  --accent-foreground: #ffffff;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --card: #0f172a;
+  --card-foreground: #ededed;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #3b82f6;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode colors */
+  :root:not(.light) {
+    /* Dark mode colors for system preference (when no explicit theme is set) */
     --background: #0a0a0a;
     --foreground: #ededed;
     --primary: #3b82f6;
