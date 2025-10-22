@@ -89,11 +89,11 @@ export const experiences: Experience[] = [
     description:
       "Built and scaled core e-commerce platform features, focusing on payment systems, API integrations, and performance optimization.",
     highlights: [
-      "Transistioned legacy desktop application to web-based platform using javascript and .NET technologies",
+      "Transitioned legacy desktop application to web-based platform using javascript and .NET technologies",
       "Developed a shared components library to standardize UI/UX across multiple teams, reducing development time for new features by 25%",
       "Led integration with multiple ecommerce platforms (eBay, Amazon), increasing sales channels and revenue by 15%",
       "Mentored 5+ junior offshore developers through code reviews and pair programming",
-      "Monitored and optimized application performance using Splunk and Sumo Logic, maintining 99.9% uptime and accelerating issue resolution times",
+      "Monitored and optimized application performance using Splunk and Sumo Logic, maintaining 99.9% uptime and accelerating issue resolution times",
     ],
   },
   {
