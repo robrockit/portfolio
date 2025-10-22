@@ -3,13 +3,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Container } from "../ui";
+import {
+  trackButtonClick,
+  trackExternalLinkClick,
+} from "@/lib/analytics";
 
 export function Hero() {
   const handleScrollToContact = () => {
+    trackButtonClick("Get in Touch", "#contact");
     const contactSection = document.querySelector("#contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const handleGitHubClick = () => {
+    trackExternalLinkClick(
+      "GitHub",
+      process.env.NEXT_PUBLIC_GITHUB_URL || "#"
+    );
   };
 
   // Animation variants
@@ -84,6 +96,7 @@ export function Hero() {
                 href={process.env.NEXT_PUBLIC_GITHUB_URL || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleGitHubClick}
                 className="bg-primary text-primary-foreground hover:bg-primary/90 group inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all hover:scale-105 hover:shadow-lg"
               >
                 <svg

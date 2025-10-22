@@ -3,6 +3,10 @@
 import { useState, useEffect } from "react";
 import { Container } from "../ui";
 import { Github, Linkedin, Mail, Download, ArrowUp } from "lucide-react";
+import {
+  trackExternalLinkClick,
+  trackResumeDownload,
+} from "@/lib/analytics";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -58,6 +62,7 @@ export function Footer() {
               <a
                 href="/resume.pdf"
                 download="Robert_Robinson_Resume.pdf"
+                onClick={trackResumeDownload}
                 className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
               >
                 <Download className="h-4 w-4" />
@@ -114,6 +119,7 @@ export function Footer() {
                     href={link.href}
                     target={link.name !== "Email" ? "_blank" : undefined}
                     rel={link.name !== "Email" ? "noopener noreferrer" : undefined}
+                    onClick={() => trackExternalLinkClick(link.name, link.href)}
                     className="text-muted-foreground hover:text-primary transition-colors"
                     aria-label={link.name}
                   >
@@ -126,12 +132,13 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="border-border text-muted-foreground mt-8 border-t pt-8 text-center text-sm">
-            <p>
+            <p className="mb-2">
               © {currentYear} Robert Robinson • Built with{" "}
               <a
                 href="https://nextjs.org"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackExternalLinkClick("Next.js", "https://nextjs.org")}
                 className="hover:text-primary transition-colors"
               >
                 Next.js
@@ -141,6 +148,7 @@ export function Footer() {
                 href="https://tailwindcss.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackExternalLinkClick("Tailwind CSS", "https://tailwindcss.com")}
                 className="hover:text-primary transition-colors"
               >
                 Tailwind CSS
@@ -150,11 +158,21 @@ export function Footer() {
                 href="https://www.framer.com/motion/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackExternalLinkClick("Framer Motion", "https://www.framer.com/motion/")}
                 className="hover:text-primary transition-colors"
               >
                 Framer Motion
               </a>
               .
+            </p>
+            <p className="text-xs">
+              This site uses Google Analytics to improve user experience.{" "}
+              <a
+                href="#privacy"
+                className="hover:text-primary underline transition-colors"
+              >
+                Privacy & Cookies
+              </a>
             </p>
           </div>
         </div>
