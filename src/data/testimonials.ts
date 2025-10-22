@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     id: "andi-bunas",
     quote:
       "I appreciate Rob's ownership of projects and the respect he commands with his team. He is transparent about issues and communication and is able to juggle a lot of competing projects (and I can do a better job helping manage priorities). He is always willing to step in and support for questions or issues. He has done an excellent job on incorporating the team priorities we set (estimations, improving communication, starting to build expertise, and exerting ownership of the platform error logs). He has a strong technical grasp of the platform and can investigate issues along side his team. His team appreciates his clarity of goals and expectations, providing knowledge and guidance, and always being a mentor for them and willing to roll up his sleeves and dive into details. He is patient and positive and brings out the best with the team.",
-    author: "Jakith Priyan",
+    author: "Andi Bunas",
     role: "Sr. Engineering Manager",
     company: "Stamps.com",
     relationship: "manager",
