@@ -36,7 +36,8 @@ export const stats: Stat[] = [
   {
     icon: Users,
     value: 10,
-    label: "Engineers Managed",
+    suffix: "+",
+    label: "Engineers & QA Managed",
     description: "Building and mentoring high-performing teams",
   },
   {
@@ -55,7 +56,7 @@ export const stats: Stat[] = [
   },
   {
     icon: Shield,
-    value: 40,
+    value: 90,
     suffix: "%",
     label: "Fraud Reduction",
     description: "Reduced fraud through technical solutions",

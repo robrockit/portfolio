@@ -19,6 +19,15 @@ export const testimonials: Testimonial[] = [
     relationship: "report",
   },
   {
+    id: "andi-bunas",
+    quote:
+      "I appreciate Rob's ownership of projects and the respect he commands with his team. He is transparent about issues and communication and is able to juggle a lot of competing projects (and I can do a better job helping manage priorities). He is always willing to step in and support for questions or issues. He has done an excellent job on incorporating the team priorities we set (estimations, improving communication, starting to build expertise, and exerting ownership of the platform error logs). He has a strong technical grasp of the platform and can investigate issues along side his team. His team appreciates his clarity of goals and expectations, providing knowledge and guidance, and always being a mentor for them and willing to roll up his sleeves and dive into details. He is patient and positive and brings out the best with the team.",
+    author: "Jakith Priyan",
+    role: "Sr. Engineering Manager",
+    company: "Stamps.com",
+    relationship: "manager",
+  },
+  {
     id: "sameer-shamsuddin",
     quote:
       "As a manager, Rob was a strong but fair advocate for his team. He motivated the group to meet tough timelines, took ownership of multiple competing priorities, and balanced direction from leadership with the realities of execution. His communication skills were particularly effective — he has a talent for bringing together divergent perspectives, providing clear feedback, and helping teams reach consensus. These strengths were on full display during one of the largest redesigns Stamps had undertaken in a decade, where Rob helped align product, design, and engineering by framing challenges, proposing practical solutions, and doing so in a straightforward, empathetic way.",

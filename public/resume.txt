@@ -1,1 +1,18 @@
-This is a placeholder resume file. Replace with actual resume PDF.
+RESUME PLACEHOLDER - ACTION REQUIRED
+
+This is a temporary placeholder file.
+
+TO ADD YOUR RESUME:
+1. Create or export your resume as a PDF file
+2. Save it as "resume.pdf" in this same directory (public/)
+3. Delete this resume.txt file
+4. The "Download Resume" button in the footer will then work correctly
+
+For detailed instructions, see: docs/RESUME_REQUIREMENT.md
+
+Expected file location: public/resume.pdf
+Expected download URL: /resume.pdf
+Download filename will be: Robert_Robinson_Resume.pdf
+
+NOTE: The resume download button in the footer currently points to /resume.pdf
+which will result in a 404 error until you add your actual resume PDF.

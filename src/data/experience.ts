@@ -34,13 +34,13 @@ export const experiences: Experience[] = [
         id: "fraud-reduction",
         title: "Fraud Prevention System Overhaul",
         challenge:
-          "Legacy fraud detection system was causing high false-positive rates, leading to customer friction and revenue loss while still missing sophisticated fraud patterns.",
+          "Our legacy authentication and fraud detection systems were struggling to keep up with evolving threats, leading to large volumes of account takeovers and fraudulent transactions.",
         solution:
-          "Architected and led implementation of ML-based fraud detection system with real-time risk scoring, integrated multiple data sources, and built automated rule engine with A/B testing framework.",
+          "Worked with cross-functional teams to design and implement a new fraud prevention architecture leveraging machine learning models, real-time transaction analysis, and multi-factor authentication.",
         impact:
-          "Reduced fraud by 40% while improving customer experience through 60% reduction in false positives. System processed 100K+ transactions daily with <100ms latency.",
-        metrics: ["40% fraud reduction", "60% fewer false positives", "<100ms latency"],
-        tags: ["Machine Learning", "Architecture", "Real-time Systems"],
+          "Reduced fraud by 90% while minimizing customer friction, leading to increased user trust and a significant drop in chargebacks.",
+        metrics: ["90% fraud reduction", "50% fewer customer complaints"],
+        tags: ["Auth0", "Architecture", "Multi-Factor Authentication"],
       },
       {
         id: "delivery-velocity",
@@ -48,21 +48,21 @@ export const experiences: Experience[] = [
         challenge:
           "Team struggled with long release cycles (6-8 weeks), manual testing bottlenecks, and frequent production incidents causing customer impact.",
         solution:
-          "Implemented CI/CD pipeline, established automated testing framework (unit, integration, E2E), introduced feature flags for safer deployments, and created observability stack with proactive monitoring.",
+          "Implemented 2-week sprint cycles, introduced CI/CD pipelines with automated testing, and drilled down into root cause analysis for incidents to improve quality gates.",
         impact:
-          "Increased feature delivery by 83%, reduced deployment time from days to hours, decreased production incidents by 65% through better quality gates.",
+          "Increased feature delivery by 83%, reduced deployment time from days to hours, reduced production incidents by 65%, and improved overall team morale and ownership.",
         metrics: ["83% delivery increase", "6-8 weeks → hours", "65% fewer incidents"],
-        tags: ["DevOps", "CI/CD", "Quality Engineering"],
+        tags: ["Agile", "CI/CD", "Quality Engineering"],
       },
       {
         id: "team-growth",
         title: "High-Performing Team Development",
         challenge:
-          "Needed to scale team capabilities while maintaining quality, with limited senior engineering talent in the market and high cost of external hiring.",
+          "Needed to build a strong engineering team for a framework that didn't have wide adoption, while also fostering growth and retention among existing team members.",
         solution:
-          "Established comprehensive mentorship program, created career development framework with clear progression paths, implemented peer code review culture, and fostered psychological safety for innovation.",
+          "Established comprehensive onboarding documentation and processes to get engineers up to speed quickly, implemented peer code review culture, and fostered psychological safety for innovation.",
         impact:
-          "Achieved 75% internal promotion rate within team, reduced time-to-productivity for new hires by 50%, maintained 90%+ team retention over 3 years.",
+          "Achieved 75% internal promotion rate within team, reduced time-to-productivity for new hires by 50%, maintained 90%+ team retention over 9 years.",
         metrics: ["75% promotion rate", "90%+ retention", "50% faster onboarding"],
         tags: ["Leadership", "Mentorship", "Culture"],
       },
@@ -72,11 +72,11 @@ export const experiences: Experience[] = [
         challenge:
           "Monolithic legacy system built on outdated technology stack created bottlenecks for feature development and scalability, with high maintenance costs.",
         solution:
-          "Led phased migration to microservices architecture, established API-first design principles, implemented event-driven patterns for system integration, zero-downtime deployment strategy.",
+          "Led phased migration to React based applications, zero-downtime deployment strategy.",
         impact:
           "Reduced system coupling enabling 3x faster feature development, improved system reliability to 99.9% uptime, decreased infrastructure costs by 30% through better resource utilization.",
         metrics: ["3x faster development", "99.9% uptime", "30% cost reduction"],
-        tags: ["Microservices", "Architecture", "Migration"],
+        tags: ["React", "Architecture", "Migration", "Serverless"],
       },
     ],
   },
@@ -89,11 +89,11 @@ export const experiences: Experience[] = [
     description:
       "Built and scaled core e-commerce platform features, focusing on payment systems, API integrations, and performance optimization.",
     highlights: [
-      "Transistioned legacy desktop application to web-based platform using javascript and .NET technologies",
+      "Transitioned legacy desktop application to web-based platform using javascript and .NET technologies",
       "Developed a shared components library to standardize UI/UX across multiple teams, reducing development time for new features by 25%",
       "Led integration with multiple ecommerce platforms (eBay, Amazon), increasing sales channels and revenue by 15%",
       "Mentored 5+ junior offshore developers through code reviews and pair programming",
-      "Monitored and optimized application performance using Splunk and Sumo Logic, maintining 99.9% uptime and accelerating issue resolution times",
+      "Monitored and optimized application performance using Splunk and Sumo Logic, maintaining 99.9% uptime and accelerating issue resolution times",
     ],
   },
   {

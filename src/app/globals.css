@@ -248,3 +248,350 @@ select:focus-visible {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
+
+/* ============================================
+   PRINT STYLESHEET
+   Optimizes portfolio for printing and PDF export
+   ============================================ */
+
+@media print {
+  /* Reset to light theme colors for better print quality */
+  :root,
+  .dark {
+    --background: #ffffff;
+    --foreground: #000000;
+    --primary: #2563eb;
+    --primary-foreground: #ffffff;
+    --secondary: #475569;
+    --secondary-foreground: #ffffff;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --border: #e2e8f0;
+
+    /* Ensure high contrast for printing */
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 1.5cm 1.5cm 2cm 1.5cm;
+  }
+
+  /* Global print settings */
+  * {
+    /* Disable animations and transitions */
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  /* Hide interactive and non-essential elements */
+  nav,
+  .theme-toggle,
+  button:not(.print-visible),
+  [role="navigation"],
+  [aria-label="Cookie consent"],
+  .cookie-consent,
+  .scroll-to-top,
+  .wave,
+  video,
+  iframe {
+    display: none !important;
+  }
+
+  /* Hide specific UI elements */
+  [class*="ThemeToggle"],
+  [class*="CookieConsent"] {
+    display: none !important;
+  }
+
+  /* Container adjustments for print */
+  .container,
+  [class*="Container"] {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Section spacing */
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 24pt;
+    margin-bottom: 0.5rem;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 18pt;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    page-break-after: avoid;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.25rem;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    page-break-after: avoid;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 12pt;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    page-break-after: avoid;
+  }
+
+  /* Paragraphs */
+  p {
+    margin-bottom: 0.75rem;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Links - show URLs for important links */
+  a {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  /* Show URLs after external links */
+  a[href^="http"]:not([href*="localhost"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+    color: #64748b;
+    word-break: break-all;
+  }
+
+  /* Don't show URLs for navigation or social links (too noisy) */
+  nav a::after,
+  [class*="social"] a::after,
+  [aria-label*="social"] a::after {
+    content: "" !important;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+    display: block;
+  }
+
+  /* Profile photo */
+  img[alt*="profile" i],
+  img[alt*="headshot" i],
+  [class*="profile"] img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  /* Cards and containers */
+  [class*="card"],
+  [class*="Card"] {
+    border: 1px solid #e2e8f0 !important;
+    background: white !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  /* Skill tags and badges */
+  [class*="badge"],
+  [class*="tag"],
+  .skill-tag {
+    border: 1px solid #e2e8f0;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem;
+    display: inline-block;
+    font-size: 10pt;
+    background: white !important;
+  }
+
+  /* Experience timeline */
+  [class*="timeline"],
+  [class*="experience"] {
+    page-break-inside: avoid;
+  }
+
+  /* Contact information - ensure it's prominent */
+  [id*="contact"],
+  [class*="contact"] {
+    page-break-before: auto;
+    margin-top: 2rem;
+  }
+
+  /* Contact links should be visible with URLs */
+  [class*="contact"] a[href^="mailto"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+
+  [class*="contact"] a[href^="tel"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+
+  /* Footer adjustments */
+  footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    font-size: 10pt;
+  }
+
+  /* Hide footer social links but keep resume download visible */
+  footer [class*="social"] {
+    display: none !important;
+  }
+
+  footer a[download]::before {
+    content: "📄 Resume available at: ";
+  }
+
+  /* Testimonials */
+  [class*="testimonial"] {
+    page-break-inside: avoid;
+    border-left: 3px solid #2563eb;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Remove background colors and gradients to save ink */
+  [class*="gradient"],
+  [class*="bg-"] {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  /* Ensure text is always black for readability */
+  [class*="text-"],
+  span,
+  div,
+  p {
+    color: black !important;
+  }
+
+  /* Exception: keep some semantic colors for headings */
+  h1,
+  h2,
+  h3 {
+    color: #1e293b !important;
+  }
+
+  /* Skills grid */
+  [class*="grid"] {
+    display: block !important;
+  }
+
+  [class*="grid"] > * {
+    margin-bottom: 1rem;
+  }
+
+  /* Page break helpers */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Tables (if any) */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  th {
+    background: #f1f5f9 !important;
+    font-weight: bold;
+  }
+
+  /* Code blocks (if any) */
+  pre,
+  code {
+    page-break-inside: avoid;
+    font-size: 10pt;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem;
+    background: #f8fafc !important;
+  }
+
+  /* Buttons that should remain visible (like contact methods) */
+  button.print-visible,
+  a.print-visible {
+    display: inline-block !important;
+    border: 1px solid #2563eb;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+
+  /* Download button for resume */
+  a[download] {
+    display: inline-block !important;
+    border: 2px solid #2563eb;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* First page header adjustments */
+  header:first-of-type {
+    margin-bottom: 2rem;
+  }
+
+  /* Ensure proper contrast for accessibility */
+  * {
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+}
