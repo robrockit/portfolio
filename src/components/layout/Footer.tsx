@@ -60,7 +60,7 @@ export function Footer() {
               </p>
               {/* Resume Download Button */}
               <a
-                href="/Robert_Robinson_Resume.pdf"
+                href="/public/Robert_Robinson_Resume.pdf"
                 download="Robert_Robinson_Resume.pdf"
                 onClick={trackResumeDownload}
                 className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
