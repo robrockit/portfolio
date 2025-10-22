@@ -4,6 +4,11 @@ import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Container } from "../ui";
 import { Mail, Linkedin, Github, Send, Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  trackExternalLinkClick,
+  trackFormSubmission,
+  trackContactMethod,
+} from "@/lib/analytics";
 
 interface FormData {
   name: string;
@@ -105,6 +110,7 @@ export function Contact() {
       }
 
       setSubmitStatus("success");
+      trackFormSubmission("Contact Form", true);
 
       // Reset form after 3 seconds
       setTimeout(() => {
@@ -120,6 +126,7 @@ export function Contact() {
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
+      trackFormSubmission("Contact Form", false);
       setErrorMessage(
         error instanceof Error ? error.message : "Failed to send message. Please try again."
       );
@@ -176,6 +183,10 @@ export function Contact() {
             {/* Email */}
             <a
               href="mailto:rrobinson022@gmail.com"
+              onClick={() => {
+                trackContactMethod("Email");
+                trackExternalLinkClick("Email", "mailto:rrobinson022@gmail.com");
+              }}
               className="border-border bg-card hover:border-primary/50 group flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:shadow-md"
             >
               <div className="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg">
@@ -194,6 +205,13 @@ export function Contact() {
               href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com"}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackContactMethod("LinkedIn");
+                trackExternalLinkClick(
+                  "LinkedIn",
+                  process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com"
+                );
+              }}
               className="border-border bg-card hover:border-primary/50 group flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:shadow-md"
             >
               <div className="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg">
@@ -212,6 +230,13 @@ export function Contact() {
               href={process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com"}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackContactMethod("GitHub");
+                trackExternalLinkClick(
+                  "GitHub",
+                  process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com"
+                );
+              }}
               className="border-border bg-card hover:border-primary/50 group flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:shadow-md"
             >
               <div className="bg-primary/10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg">
