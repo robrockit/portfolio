@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { trackThemeToggle } from "@/lib/analytics";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -26,9 +27,15 @@ export function ThemeToggle() {
 
   const isDark = theme === "dark";
 
+  const handleThemeToggle = () => {
+    const newTheme = isDark ? "light" : "dark";
+    setTheme(newTheme);
+    trackThemeToggle(newTheme);
+  };
+
   return (
     <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={handleThemeToggle}
       className="border-border bg-background hover:bg-muted relative h-9 w-9 rounded-lg border p-2 transition-colors"
       aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
     >
